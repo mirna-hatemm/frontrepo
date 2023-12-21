@@ -1,0 +1,76 @@
+<!-- Include Bootstrap CSS in your HTML head -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<div class="container mt-5">
+  <!-- User Greeting and Type -->
+  <h1>Hello, {{ authService.getLoggedInUsername() }} (user type: Patient)</h1>
+  <div class="container mt-5">
+    <!-- ... other content ... -->
+  
+    <div class="row my-4">
+      <div class="col">
+        <h3>Enter Doctor's Username:</h3>
+        <input type="text" class="form-control" placeholder="Type doctor's username" [(ngModel)]="typedDoctorUsername" (ngModelChange)="fetchSlotsForTypedDoctor()">
+      </div>
+    </div>
+  <!-- Section for displaying a hardcoded doctor's available appointments -->
+  <div class="row my-4">
+    <div class="col">
+      <h3>Available Appointments:</h3>
+      <table class="table table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th>ID</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let availableAppointment of availableAppointments">
+            <td>{{ availableAppointment.reservationID }}</td>
+            <td>{{ availableAppointment.reservationDate }}</td>
+            <td>{{ availableAppointment.reservationTime }}</td>
+            <td>
+              <button class="btn btn-primary" (click)="bookAppointment(availableAppointment.reservationID)">Book</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Section for My Appointments -->
+  <div class="row my-4">
+    <div class="col">
+      <h3>My Appointments</h3>
+      <table class="table table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th>ID</th>
+            <th>Date</th>
+            <th>Appointment</th>
+            <th>Doctor</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let appointment of appointments">
+            <td>{{ appointment.reservationID }}</td>
+            <td>{{ appointment.reservationDate }}</td>
+            <td>{{ appointment.reservationTime }}</td>
+            <td>{{ appointment.doctorUsername }}</td>
+            <td>
+              <!-- Replace with actual action methods -->
+              <!-- patient.component.html -->
+              <button class="btn btn-info" (click)="updateAppointment(appointment)">Update</button>
+
+              <button class="btn btn-danger" (click)="cancelAppointment(appointment.reservationID)">Cancel</button>
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

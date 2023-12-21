@@ -1,0 +1,10 @@
+<div>
+    <h2>Booked Slots</h2>
+    <ul>
+      <li *ngFor="let slot of bookedSlots">
+        {{ slot.reservationId }}
+        <button (click)="cancelSlot(slot.reservationId)">Cancel</button>
+      </li>
+    </ul>
+  </div>
+  

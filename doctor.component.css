@@ -1,0 +1,78 @@
+/* doctor.component.css */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem; /* Add spacing below table for consistency */
+  color: #212529; /* Default Bootstrap text color */
+  background-color: #fff; /* Default white background */
+}
+
+th, td {
+  border: 1px solid #dee2e6; /* Bootstrap's light grey border */
+  padding: 0.75rem; /* Bootstrap's default padding */
+  vertical-align: top; /* Align content to the top of the cell */
+  border-top: 1px solid #dee2e6; /* Bootstrap's top border for table cells */
+}
+
+th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dee2e6; /* Thicker bottom border for headers */
+  background-color: #f8f9fa; /* Slightly grey background for headers */
+  text-align: inherit; /* Inherit text alignment */
+}
+
+/* Bootstrap's button styling */
+button {
+  color: #fff; /* White text */
+  text-align: center; /* Center the text inside the button */
+  vertical-align: middle; /* Align the text vertically */
+  user-select: none; /* Disable text selection */
+  background-color: #007bff; /* Primary button color */
+  border: 1px solid #007bff; /* Border to match button color */
+  padding: 0.375rem 0.75rem; /* Default padding */
+  font-size: 1rem; /* Default font size */
+  line-height: 1.5; /* Default line height */
+  border-radius: 0.25rem; /* Rounded borders */
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+              border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; /* Smooth transitions */
+}
+
+button:hover {
+  background-color: #0056b3; /* Darken button on hover */
+  border-color: #0056b3; /* Darken border on hover */
+}
+
+/* Styling for form inputs to match Bootstrap's default */
+form input[type="date"],
+form input[type="time"] {
+  font-size: 1rem; /* Default font size */
+  line-height: 1.5; /* Default line height */
+  color: #495057; /* Default text color */
+  background-color: #fff; /* White background */
+  background-clip: padding-box; /* Don't extend the background into the border */
+  border: 1px solid #ced4da; /* Default border color */
+  border-radius: 0.25rem; /* Rounded borders */
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; /* Smooth transitions */
+}
+
+/* Align table headers with the body content */
+thead th {
+  text-align: center; /* Center headers */
+}
+
+/* Adjust the style for alternating row colors */
+tbody tr:nth-of-type(odd) {
+  background-color: #f8f9fa; /* Light grey background for odd rows */
+}
+
+/* Bootstrap-like table hover effect */
+tbody tr:hover {
+  background-color: #e9ecef; /* Light grey background for hover */
+}
+
+/* Responsive text alignment */
+@media (max-width: 768px) {
+  th, td {
+    text-align: left; /* Align text to left on small screens */
+  }
+}

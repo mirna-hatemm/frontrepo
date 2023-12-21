@@ -1,0 +1,49 @@
+
+<div *ngIf="slotsFetched">
+  <h2>Hello, {{ getDoctorUsername() }} (user type: Doctor)</h2>
+  <h3>My Slots</h3>
+
+  <!-- Display current slots -->
+  <table *ngIf="slots.length > 0; else noSlotsTemplate">
+    <thead>
+      <tr>
+        
+        <th>Date</th>
+        <th>Start Time</th>
+        <th>End Time</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let slot of slots">
+        <td>{{ slot.reservationDate  }}</td>
+        <td>{{ slot.reservationTime  }}</td>
+        <td>{{ slot.reservationEndtime  }}</td>
+        <td>
+         
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Add a form to allow doctors to add new slots -->
+  <form (ngSubmit)="setSchedule()">
+    <div>
+      <label for="date">Date:</label>
+      <input type="date" [(ngModel)]="newScheduleDate" name="date" required>
+    </div>
+    <div>
+      <label for="startTime">Start Time:</label>
+      <input type="time" [(ngModel)]="newScheduleStartTime" name="startTime" required>
+    </div>
+    <div>
+      <label for="endTime">End Time:</label>
+      <input type="time" [(ngModel)]="newScheduleEndTime" name="endTime" required>
+    </div>
+    <button type="submit">Add Slot</button>
+  </form>
+</div>
+
+<ng-template #noSlotsTemplate>
+  <p>No available slots for this doctor.</p>
+</ng-template>

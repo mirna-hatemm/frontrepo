@@ -1,0 +1,10 @@
+<form [formGroup]="bookingForm" (submit)="onSubmit()">
+    <label for="reservationId">Reservation ID:</label>
+    <input type="text" id="reservationId" formControlName="reservationID" name="reservationID"><br><br>
+  
+    <label for="username">Username:</label>
+    <input type="text" id="username" formControlName="username" name="username"><br><br>
+  
+    <button type="submit">Book Slot</button>
+  </form>
+

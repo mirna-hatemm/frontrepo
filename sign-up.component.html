@@ -1,0 +1,40 @@
+<div class="sign-in-container">
+  <h2 class="sign-in-title">Sign Up</h2>
+  <div class="form-container">
+    <form (ngSubmit)="signUp()" [formGroup]="signUpForm">
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" formControlName="username" required>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" formControlName="password" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" formControlName="email" required>
+      </div>
+
+      <div class="form-group radio-group">
+        <label>User Type:</label>
+        <label>
+          <input type="radio" class="radio-input" name="userType" value="patient" formControlName="userType">
+          Patient
+        </label>
+        <label>
+          <input type="radio" class="radio-input" name="userType" value="doctor" formControlName="userType">
+          Doctor
+        </label>
+      </div>
+
+      <div *ngIf="signUpForm.get('userType')?.invalid && signUpForm.get('userType')?.touched" class="error-message">
+        Please select a user type
+      </div>
+
+      <button type="submit" class="big-button">Sign Up</button>
+    </form>
+    <a routerLink="/sign-in" class="link">Already have an account? Sign In</a>
+  </div>
+</div>

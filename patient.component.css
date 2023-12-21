@@ -1,0 +1,31 @@
+/* Adjust font sizes */
+body, h1, h3, td, th {
+    font-size: 0.9em; /* Adjust the size as needed */
+  }
+  
+  /* Styling for tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid black; /* Adjust border width as needed */
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  /* Additional styling for buttons if needed */
+  .btn {
+    font-size: 0.8em; /* Adjust button font size */
+  }
+  
+  /* Optional: Adjust input field size */
+  input[type="text"] {
+    font-size: 0.9em;
+  }
+  

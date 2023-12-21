@@ -1,0 +1,9 @@
+<<form [formGroup]="updateForm" (submit)="onUpdate()">
+    <label for="newDoctor">New Doctor:</label>
+    <input type="text" id="newDoctor" formControlName="doctor" name="doctor">
+  
+    <label for="newSlot">New Slot:</label>
+    <input type="text" id="newSlot" formControlName="slot" name="slot">
+  
+    <button type="submit">Update Appointment</button>
+  </form>

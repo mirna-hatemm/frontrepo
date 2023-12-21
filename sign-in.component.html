@@ -1,0 +1,33 @@
+<div class="sign-in-container">
+  <h2 class="sign-in-title">Sign In</h2>
+  <div class="form-container">
+    <form (ngSubmit)="signIn()" [formGroup]="signInForm">
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" formControlName="username" required>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" formControlName="password" required>
+      </div>
+
+      <div class="form-group radio-group">
+        <label>User Type:</label>
+        <label>
+          <input type="radio" class="radio-input" name="userType" value="patient" formControlName="userType">
+          Patient
+        </label>
+        <label>
+          <input type="radio" class="radio-input" name="userType" value="doctor" formControlName="userType">
+          Doctor
+        </label>
+      </div>
+
+      <div *ngIf="signInForm.get('userType')?.invalid && signInForm.get('userType')?.touched" class="error-message">
+        Please select a user type
+      </div>
+
+      <button type="submit" class="big-button">Sign In</button>
+    </form>
+    <a routerLink="/sign-up" class="link">Don't have an account?Register

@@ -1,0 +1,75 @@
+/* Overall form container styling */
+.form-container {
+  max-width: 400px; /* Set a max-width for the form */
+  margin: 2rem auto; /* Center the form with automatic margins */
+  padding: 2rem; /* Add some padding inside the form */
+  border: 1px solid #ced4da; /* A light grey border for subtle definition */
+  border-radius: 0.25rem; /* Slightly rounded corners for aesthetics */
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1); /* A gentle shadow to lift the form off the page */
+  background: #fff; /* A white background */
+}
+
+/* Style the sign in title */
+.sign-in-title {
+  font-size: 1.5rem; /* A comfortable reading size */
+  text-align: center; /* Centered text */
+  margin-bottom: 1rem; /* Space below the title */
+}
+
+/* Style for input fields */
+input[type="text"],
+input[type="password"] {
+  width: calc(100% - 16px); /* Full width minus padding */
+  padding: 8px; /* Comfortable padding */
+  margin-bottom: 1rem; /* Space between each field */
+  border: 1px solid #ced4da; /* Borders to match the form container */
+  border-radius: 0.25rem; /* Consistent rounded corners */
+  font-size: 1rem; /* Readable text size */
+}
+
+/* Styling for radio buttons and their labels */
+.radio-label {
+  display: inline-block; /* Allows the label to sit next to the radio button */
+  margin-right: 1rem; /* Space after each label */
+}
+
+/* Style the submit button to match the theme */
+button[type="submit"] {
+  width: 100%; /* Full width of the container */
+  padding: 10px 0; /* Padding for a taller button */
+  margin-top: 1rem; /* Space above the button */
+  border: none; /* No border */
+  border-radius: 0.25rem; /* Rounded corners to match the form */
+  background-color: #007bff; /* The primary blue color */
+  color: white; /* White text */
+  font-size: 1rem; /* Same text size as the inputs */
+  cursor: pointer; /* A pointer cursor to indicate it's clickable */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* A subtle shadow for dimension */
+}
+
+/* Hover effect for the button */
+button[type="submit"]:hover {
+  background-color: #0056b3; /* A slightly darker blue on hover */
+}
+
+/* Link styling */
+.link {
+  text-align: center; /* Centered link */
+  display: block; /* Block display to take up the full width */
+  margin-top: 1rem; /* Space above the link */
+  color: #007bff; /* Same blue as button for consistency */
+  text-decoration: none; /* No underline */
+}
+
+.link:hover {
+  text-decoration: underline; /* Underline on hover for emphasis */
+}
+
+/* Error message styling */
+.error-message {
+  color: #dc3545; /* A red color for errors */
+  font-size: 0.875rem; /* A smaller size to not overpower the inputs */
+  margin-top: -1rem; /* Pull the error message up closer to the radio buttons */
+  margin-bottom: 1rem; /* Space below the error message */
+  text-align: center; /* Center the error message */
+}
